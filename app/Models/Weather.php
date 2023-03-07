@@ -17,18 +17,16 @@ class Weather extends Model
         'temp_max',
         'pressure',
         'humidity',
-        'cities_id',
+
     ];
 
     protected $hidden = [
-        'weather_id',
-        'created_at',
         'updated_at',
         'deleted_at'
     ];
 
     public function city()
     {
-        return $this->belongsTo(City::class, 'city_id');
+        return $this->belongsTo(City::class, 'cities_id');
     }
 }

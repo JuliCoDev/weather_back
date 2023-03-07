@@ -10,7 +10,7 @@ class City extends Model
     use HasFactory;
 
 
-
+    protected $primaryKey = 'cities_id';
     protected $fillable = [
         'name',
         'coordinates',
@@ -23,7 +23,7 @@ class City extends Model
 
     public function weathers()
     {
-        return $this->hasMany(Weather::class, 'city_id');
+        return $this->hasMany(Weather::class, 'cities_id');
     }
 
 

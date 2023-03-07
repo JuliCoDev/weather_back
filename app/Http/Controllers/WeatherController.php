@@ -24,7 +24,7 @@ class WeatherController extends Controller
      */
     public function index()
     {
-        $weathers = Weather::all();
+        $weathers = Weather::with('city')->get();
         return $weathers;
     }
 
