@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>Clima</h1>
+<p>APIs for managing Clima</p>
+<!-- START_9fa71975b718a4cc102933172c5c61de -->
+<h2>Display a listing of the resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/clima" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/clima"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/clima</code></p>
+<!-- END_9fa71975b718a4cc102933172c5c61de -->
+<!-- START_724f17b84fe3295de0995f2dc27ec11e -->
+<h2>Almacena un nuevo recurso en el almacenamiento.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/clima" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"temp":4665.131832801,"feels_like":305.382409665,"temp_min":2322.87,"temp_max":46354138.4,"pressure":10,"humidity":3}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/clima"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "temp": 4665.131832801,
+    "feels_like": 305.382409665,
+    "temp_min": 2322.87,
+    "temp_max": 46354138.4,
+    "pressure": 10,
+    "humidity": 3
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/clima</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>temp</code></td>
+<td>float</td>
+<td>required</td>
+<td>La temperatura del clima.</td>
+</tr>
+<tr>
+<td><code>feels_like</code></td>
+<td>float</td>
+<td>required</td>
+<td>La temperatura que siente el ser humano.</td>
+</tr>
+<tr>
+<td><code>temp_min</code></td>
+<td>float</td>
+<td>required</td>
+<td>La temperatura mínima.</td>
+</tr>
+<tr>
+<td><code>temp_max</code></td>
+<td>float</td>
+<td>required</td>
+<td>La temperatura máxima.</td>
+</tr>
+<tr>
+<td><code>pressure</code></td>
+<td>integer</td>
+<td>required</td>
+<td>La presión en unidad hPa.</td>
+</tr>
+<tr>
+<td><code>humidity</code></td>
+<td>integer</td>
+<td>required</td>
+<td>La humedad en porcentaje.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_724f17b84fe3295de0995f2dc27ec11e -->
+<h1>general</h1>
+<!-- START_4dfafe7f87ec132be3c8990dd1fa9078 -->
+<h2>Return an empty response simply to trigger the storage of the CSRF cookie in the browser.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/sanctum/csrf-cookie" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/sanctum/csrf-cookie"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET sanctum/csrf-cookie</code></p>
+<!-- END_4dfafe7f87ec132be3c8990dd1fa9078 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>
